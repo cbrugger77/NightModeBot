@@ -8,7 +8,7 @@ A Telegram Bot to lock group in night to prevent night spam
 - That's all done
 ```
 
-# Vars
+# Vars 
 ```
 CHAT_ID: Your Telegram Chat ID.
 TOKEN: Your Telegram Bot Token.
