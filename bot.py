@@ -27,7 +27,7 @@ async def group_close():
     try:
         await nmbot.send_message(
                 CHAT_ID,
-                "It's 12:00 AM\nGroup is Closing!"
+                "Es ist 22:00 Uhr\nGute Nacht!"
                 )
         await nmbot.set_chat_permissions(
                 CHAT_ID,
@@ -44,7 +44,7 @@ async def group_open():
     try:
         await nmbot.send_message(
                 CHAT_ID,
-                "It's 6:00 AM\nGroup is opening"
+                "Es ist 8:00 Uhr\nAb jetzt könnt ihr wieder schreiben"
                 )
         await nmbot.set_chat_permissions(
                 CHAT_ID,
@@ -74,8 +74,8 @@ async def start(client, message):
         )
 
 scheduler = AsyncIOScheduler(timezone=TIMEZONE)
-scheduler.add_job(group_close, trigger="cron", hour=11, minute=59)
-scheduler.add_job(group_open, trigger="cron", hour=5, minute=59)
+scheduler.add_job(group_close, trigger="cron", hour=21, minute=59)
+scheduler.add_job(group_open, trigger="cron", hour=7, minute=59)
 scheduler.start()
 
 print("Successfully Started Bot!")
